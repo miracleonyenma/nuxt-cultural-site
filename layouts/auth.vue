@@ -17,7 +17,7 @@ const authLinks = [
 ];
 </script>
 <template>
-  <div class="flex flex-col gap-4 lg:grid grid-cols-2 bg-gray-950">
+  <div class="flex flex-col gap-4 lg:grid grid-cols-2">
     <AuthAside />
     <main class="col-span-1">
       <div class="flex flex-col items-center justify-center h-screen">
@@ -27,8 +27,9 @@ const authLinks = [
               <ULink
                 :to="link.to"
                 :class="{
-                  'text-gray-100': route.path === link.to,
-                  'text-gray-500': route.path !== link.to,
+                  'dark:text-gray-100 text-gray-800 font-semibold':
+                    route.path === link.to,
+                  'dark:text-gray-500': route.path !== link.to,
                   hidden: link.hidden && route.path !== link.to,
                 }"
               >

@@ -6,13 +6,17 @@
         footer: {
           base: 'flex flex-col gap-4',
           padding: 'mt-auto py-16',
-          background: 'bg-gray-900/60 backdrop-blur-lg border-none',
+          background:
+            'bg-white/60 dark:bg-gray-900/60 backdrop-blur-lg border-none',
         },
       }"
       class="h-full flex flex-col bg-[url('/images/heritage-pageant-6.jpg')] bg-cover bg-center bg-no-repeat"
     >
+      <template #header>
+        <SiteNav />
+      </template>
       <template #footer>
-        <h2 class="text-4xl font-bold leading-7 text-gray-100">
+        <h2 class="text-4xl font-bold leading-7">
           Cultural and traditional practices showcase and sharing platform
         </h2>
         <p>

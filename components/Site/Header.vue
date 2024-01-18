@@ -1,5 +1,7 @@
 <template>
-  <header class="site-header sticky top-0 left-0 w-full bg-gray-800 p-4">
+  <header
+    class="site-header sticky top-0 left-0 w-full bg-gray-50 dark:bg-gray-800 p-4"
+  >
     <div class="wrapper flex items-center justify-between">
       <NuxtLink to="/" class="site-header__logo"> Cultural Site </NuxtLink>
 
