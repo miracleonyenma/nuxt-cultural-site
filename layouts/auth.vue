@@ -18,27 +18,7 @@ const authLinks = [
 </script>
 <template>
   <div class="flex flex-col gap-4 lg:grid grid-cols-2 bg-gray-950">
-    <aside class="col-span-1 lg:h-screen">
-      <UCard
-        :ui="{
-          rounded: 'lg:rounded-l-none',
-          footer: {
-            padding: 'mt-auto py-16',
-          },
-        }"
-        class="h-full flex flex-col"
-      >
-        <template #footer>
-          <h2 class="text-3xl font-bold leading-7 text-gray-100">
-            Cultural and traditional practices showcase and sharing platform
-          </h2>
-          <p>
-            Join us in our journey to preserve and share our cultural and
-            traditional practices with the world.
-          </p>
-        </template>
-      </UCard>
-    </aside>
+    <AuthAside />
     <main class="col-span-1">
       <div class="flex flex-col items-center justify-center h-screen">
         <div class="flex flex-col gap-4">
