@@ -121,7 +121,10 @@ const showPassword = ref(false);
     </UFormGroup>
 
     <!-- forgot password -->
-    <div v-if="props.type !== 'forgot-password'" class="flex justify-end">
+    <div
+      v-if="props.type !== 'forgot-password' && props.type !== 'register'"
+      class="flex justify-end"
+    >
       <ULink inactive-class="text-gray-500" to="/forgot-password"
         >Forgot Password?</ULink
       >
