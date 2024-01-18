@@ -4,15 +4,15 @@
 @tailwind utilities;
 
 body {
-  @apply text-slate-800 dark:text-slate-100 bg-gray-200 dark:bg-gray-900;
+  @apply bg-gray-200 text-slate-800 dark:bg-gray-900 dark:text-slate-100;
 }
 
 .site-section {
-  @apply py-20 p-4 w-full;
+  @apply w-full p-4 py-20;
 }
 
 .site-section > .wrapper {
-  @apply mx-auto max-w-4xl;
+  @apply mx-auto max-w-6xl;
 }
 
 .img-cont {

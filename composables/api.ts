@@ -1,4 +1,4 @@
-import { peoplesQueryLiteral } from "~/utils/api";
+import { peopleQueryLiteral, peoplesQueryLiteral } from "~/utils/api";
 
 export const useSendRequest = () => {
   const {
@@ -34,7 +34,7 @@ export const usePeople = () => {
     page?: number | undefined;
     pageSize?: number | undefined;
     searchTerm?: string | undefined;
-  }) => Promise<PeopleResponseData> = async ({
+  }) => Promise<PeopleResponse> = async ({
     page = 1,
     pageSize = 10,
     searchTerm = "",
@@ -53,7 +53,25 @@ export const usePeople = () => {
     return await res.json();
   };
 
+  const fetchPeople: ({
+    slug,
+  }: {
+    slug: string;
+  }) => Promise<PeopleResponse> = async ({ slug }) => {
+    const peopleQuery = {
+      query: peopleQueryLiteral,
+      variables: {
+        slug,
+      },
+    };
+
+    const res = await sendRequest(peopleQuery);
+
+    return await res.json();
+  };
+
   return {
     fetchPeoples,
+    fetchPeople,
   };
 };

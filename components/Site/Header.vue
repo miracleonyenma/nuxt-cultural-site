@@ -1,8 +1,8 @@
 <template>
   <header
-    class="site-header fixed z-20 top-0 left-0 w-full bg-gray-50 dark:bg-gray-800 p-4"
+    class="site-header sticky left-0 top-0 z-20 w-full bg-gray-50 p-4 dark:bg-gray-800"
   >
-    <div class="wrapper flex items-center justify-between">
+    <div class="wrapper mx-auto flex max-w-6xl items-center justify-between">
       <NuxtLink to="/" class="site-header__logo"> Cultural Site </NuxtLink>
 
       <SiteSearchField />
