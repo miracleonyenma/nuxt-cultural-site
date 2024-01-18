@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const links = [
   {
     label: "Artifacts",
@@ -11,9 +11,14 @@ const links = [
     to: "/practices",
   },
   {
-    label: "About",
+    label: "Sign In",
     // icon: "i-heroicons-home",
-    to: "/about",
+    to: "/login",
+  },
+  {
+    label: "Register",
+    // icon: "i-heroicons-home",
+    to: "/register",
   },
 ];
 
