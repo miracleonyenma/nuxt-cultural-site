@@ -6,3 +6,19 @@
 body {
   @apply text-slate-800 dark:text-slate-100 bg-gray-200 dark:bg-gray-900;
 }
+
+.site-section {
+  @apply py-20 p-4 w-full;
+}
+
+.site-section > .wrapper {
+  @apply mx-auto max-w-4xl;
+}
+
+.img-cont {
+  @apply relative;
+}
+
+.img-cont img {
+  @apply w-full;
+}

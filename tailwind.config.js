@@ -1,6 +1,7 @@
-import type { Config } from "tailwindcss";
+/** @type {import('tailwindcss').Config} */
+
 import defaultTheme from "tailwindcss/defaultTheme";
-export default <Partial<Config>>{
+export default {
   theme: {
     extend: {
       fontFamily: {
