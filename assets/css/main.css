@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-200 text-slate-800 dark:bg-gray-900 dark:text-slate-100;
+  @apply bg-gray-50 text-slate-800 dark:bg-gray-900 dark:text-slate-100;
 }
 
 .site-section {
