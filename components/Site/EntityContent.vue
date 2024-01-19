@@ -10,8 +10,8 @@ defineProps<{
   <main v-if="entity">
     <section class="site-section">
       <div class="wrapper">
-        <header class="site-section__header">
-          <figure class="img-cont h-64 w-full">
+        <header class="site-section__header flex flex-col gap-2">
+          <figure class="img-cont h-full w-full">
             <NuxtImg
               :src="entity?.attributes.cover.data.attributes.url"
               class="!h-full rounded-2xl object-cover object-center"
@@ -30,6 +30,8 @@ defineProps<{
           v-if="entity?.attributes.body"
           :content="entity?.attributes.body"
         />
+
+        <p v-else class="text-xl">No content found.</p>
       </div>
     </section>
   </main>
