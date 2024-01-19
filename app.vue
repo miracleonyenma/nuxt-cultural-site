@@ -24,7 +24,7 @@ useSeoMeta({
   ogDescription: "Cultural and Traditional practices showcase website",
   ogTitle: "Cultural Showcase Website",
   ogImage: "/images/heritage-pageant-2.jpg",
-  ogUrl: siteUrl,
+  ogUrl: siteUrl as string,
   ogSiteName: "Cultural Showcase Website",
   ogType: "website",
   ogLocale: "en_US",

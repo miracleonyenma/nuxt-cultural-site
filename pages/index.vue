@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import { usePeople } from "~/composables/api";
-
-const { fetchPeoples } = usePeople();
+const { fetchPeoples } = useAPI();
 const { data, error } = await useAsyncData("people", () => fetchPeoples({}));
 const peoples = ref(data.value?.data.peoples);
-// const people = [
-//   {
-//     name: "Omuma",
-//     description: "The omuma people",
-//     coverImage: "/images/heritage-pageant-3.jpg",
-//   },
-// ];
 
 if (error.value) {
   console.error(error.value);

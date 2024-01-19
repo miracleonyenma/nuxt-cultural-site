@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute();
-const { fetchArtifacts } = usePeople();
+const { fetchArtifacts } = useAPI();
 
 const { data, error } = await useAsyncData("artifacts", () =>
   fetchArtifacts({

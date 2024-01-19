@@ -1,5 +1,6 @@
 import {
   artifactsQueryLiteral,
+  loginQueryLiteral,
   peopleQueryLiteral,
   peoplesQueryLiteral,
   practicesQueryLiteral,
@@ -28,7 +29,7 @@ export const useSendRequest = () => {
   };
 };
 
-export const usePeople = () => {
+export const useAPI = () => {
   const sendRequest = useSendRequest();
 
   const fetchPeoples: ({
@@ -109,10 +110,55 @@ export const usePeople = () => {
     return await res.json();
   };
 
+  const registerUser: ({
+    username,
+    email,
+    password,
+  }: {
+    username: string;
+    email: string;
+    password: string;
+  }) => Promise<RegisterResponse> = async ({ username, email, password }) => {
+    const registerQuery = {
+      query: registerQueryLiteral,
+      variables: {
+        username,
+        email,
+        password,
+      },
+    };
+
+    const res = await sendRequest(registerQuery);
+
+    return await res.json();
+  };
+
+  const loginUser: ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => Promise<LoginResponse> = async ({ email, password }) => {
+    const loginQuery = {
+      query: loginQueryLiteral,
+      variables: {
+        email,
+        password,
+      },
+    };
+
+    const res = await sendRequest(loginQuery);
+
+    return await res.json();
+  };
+
   return {
     fetchPeoples,
     fetchPeople,
     fetchPractices,
     fetchArtifacts,
+    registerUser,
+    loginUser,
   };
 };

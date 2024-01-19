@@ -1,8 +1,8 @@
-interface User {
-  name: string;
-  email: string;
-  password: string;
-}
+// interface User {
+//   name: string;
+//   email: string;
+//   password: string;
+// }
 
 // peoples
 interface CoverData {
@@ -133,4 +133,42 @@ interface ArtifactsResponse {
       data: Practice[];
     };
   };
+}
+
+interface RoleAttributes {
+  id: string;
+  name: string;
+  description: string;
+  type: string;
+}
+
+interface UserAttributes {
+  id: string;
+  username: string;
+  email: string;
+  confirmed: boolean;
+  role: RoleAttributes | null;
+}
+
+interface RegisterResponse {
+  data: {
+    register: {
+      jwt: string | null;
+      user: UserAttributes;
+    };
+  };
+}
+
+interface LoginResponse {
+  data: {
+    login: {
+      jwt: string | null;
+      user: UserAttributes;
+    };
+  };
+}
+
+interface User {
+  jwt: string | null;
+  user: UserAttributes;
 }

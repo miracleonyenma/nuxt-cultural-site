@@ -2,6 +2,17 @@ import type { _flex } from '#tailwind-config/theme';
 <script setup lang="ts">
 import { object, string, type InferType } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
+// import {
+//   useAPI,
+// } from "~/composables/api";
+
+const { loginUser, registerUser } = useAPI();
+
+const user = useUser();
+
+const saveUser = (user: any) => {
+  localStorage.setItem("user", JSON.stringify(user));
+};
 
 const props = defineProps<{
   type: "login" | "register" | "forgot-password";
@@ -20,7 +31,7 @@ const registerSchema = object({
     .min(8, "Must be at least 8 characters")
     .required("Required"),
   confirmPassword: string()
-    .oneOf([ref("password")], "Passwords must match")
+    .oneOf([ref("password").value], "Passwords must match")
     .required("Required"),
 });
 
@@ -39,7 +50,7 @@ const schema = computed(() => {
   }
 });
 
-type Schema = InferType<typeof schema>;
+type Schema = InferType<typeof schema.value>;
 
 const state = reactive({
   name: undefined,
@@ -51,6 +62,21 @@ const state = reactive({
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   // Do something with event.data
   console.log(event.data);
+
+  if (props.type === "login") {
+    // login
+    const data = await loginUser(event.data);
+    setUser(data.data.login);
+    saveUser(data.data.login);
+  } else if (props.type === "register") {
+    // register
+    const data = await registerUser(event.data);
+    setUser(data.data.register);
+    saveUser(data.data.register);
+  }
+  // else if(props.type === 'forgot-password') {
+  //   // forgot password
+  // }
 }
 
 const showPassword = ref(false);

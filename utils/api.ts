@@ -131,3 +131,41 @@ export const artifactsQueryLiteral = `query($slug: String) {
   }
 }
 `;
+
+export const registerQueryLiteral = `mutation($userame: String!, $email: String!, $password: String!) {
+  register(input: { username: $userame, email: $email, password: $password }) {
+    jwt
+    user {
+      id
+      username
+      email
+      confirmed
+      role {
+        id
+        name
+        description
+        type
+      }
+    }
+  }
+}`;
+
+export const loginQueryLiteral = `mutation($email: String!, $password: String!) {
+  login(input: { identifier: $email, password: $password }) {
+    jwt
+    user {
+      id
+      username
+      email
+      confirmed
+      blocked
+      role {
+        id
+        name
+        description
+        type
+      }
+    }
+  }
+}
+`;
