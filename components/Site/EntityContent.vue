@@ -25,9 +25,7 @@ defineProps<{
       </div>
     </section>
     <section class="site-section">
-      <div
-        class="wrapper prose:text-slate-800 prose:dark:!text-slate-100 prose lg:prose-xl"
-      >
+      <div class="wrapper prose lg:prose-xl dark:prose-invert">
         <StrapiBlocks
           v-if="entity?.attributes.body"
           :content="entity?.attributes.body"
