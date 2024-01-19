@@ -91,3 +91,38 @@ interface PeopleResponse {
     };
   };
 }
+
+interface Practice {
+  id: string;
+  attributes: {
+    slug: string;
+    name: string;
+    description: string;
+    body: any[]; // Replace 'any' with the appropriate type for the 'body' attribute
+    cover: {
+      data: {
+        id: string;
+        attributes: {
+          url: string;
+        };
+      };
+    };
+    category: {
+      data: {
+        id: string;
+        attributes: {
+          name: string;
+          slug: string;
+        };
+      };
+    };
+  };
+}
+
+interface PracticesResponse {
+  data: {
+    practices: {
+      data: Practice[];
+    };
+  };
+}

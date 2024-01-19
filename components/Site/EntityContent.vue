@@ -1,0 +1,24 @@
+<script setup lang="ts">
+defineProps<{
+  entity: Practice;
+  type: "practice" | "artifact";
+}>();
+</script>
+<template>
+  <section class="site-section">
+    <div class="wrapper">
+      <header class="site-section__header">
+        <figure class="img-cont h-64 w-full">
+          <NuxtImg
+            :src="entity.attributes.cover.data.attributes.url"
+            class="!h-full rounded-2xl object-cover object-center"
+          />
+        </figure>
+        <div class="flex flex-col">
+          <h2 class="text-4xl font-bold">{{ entity.attributes.name }}</h2>
+          <p class="text-xl">{{ entity.attributes.description }}</p>
+        </div>
+      </header>
+    </div>
+  </section>
+</template>

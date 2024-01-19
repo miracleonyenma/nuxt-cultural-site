@@ -1,4 +1,9 @@
-import { peopleQueryLiteral, peoplesQueryLiteral } from "~/utils/api";
+import {
+  artifactsQueryLiteral,
+  peopleQueryLiteral,
+  peoplesQueryLiteral,
+  practicesQueryLiteral,
+} from "~/utils/api";
 
 export const useSendRequest = () => {
   const {
@@ -70,8 +75,44 @@ export const usePeople = () => {
     return await res.json();
   };
 
+  const fetchPractices: ({
+    slug,
+  }: {
+    slug: string;
+  }) => Promise<PracticesResponse> = async ({ slug }) => {
+    const practiceQuery = {
+      query: practicesQueryLiteral,
+      variables: {
+        slug,
+      },
+    };
+
+    const res = await sendRequest(practiceQuery);
+
+    return await res.json();
+  };
+
+  const fetchArtifacts: ({
+    slug,
+  }: {
+    slug: string;
+  }) => Promise<PracticesResponse> = async ({ slug }) => {
+    const artifactQuery = {
+      query: artifactsQueryLiteral,
+      variables: {
+        slug,
+      },
+    };
+
+    const res = await sendRequest(artifactQuery);
+
+    return await res.json();
+  };
+
   return {
     fetchPeoples,
     fetchPeople,
+    fetchPractices,
+    fetchArtifacts,
   };
 };

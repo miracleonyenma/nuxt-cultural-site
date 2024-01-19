@@ -59,7 +59,7 @@ const showPassword = ref(false);
   <UForm
     :schema="schema"
     :state="state"
-    class="space-y-4 w-96"
+    class="w-96 space-y-4"
     @submit="onSubmit"
   >
     <UFormGroup label="Name" name="name" v-if="props.type === 'register'">
@@ -137,5 +137,12 @@ const showPassword = ref(false);
         Reset Password
       </template>
     </UButton>
+
+    <p>
+      Want to contribute?
+      <ULink to="https://cultural-site.onrender.com/admin">
+        Login as admin
+      </ULink>
+    </p>
   </UForm>
 </template>

@@ -67,3 +67,67 @@ export const peopleQueryLiteral = `query($slug: String) {
     }
   }
 }`;
+
+export const practicesQueryLiteral = `query($slug: String) {
+  practices(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        slug
+        name
+        description
+        body
+        cover {
+          data {
+            id
+            attributes {
+              url
+            }
+          }
+        }
+        category {
+          data {
+            id
+            attributes {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export const artifactsQueryLiteral = `query($slug: String) {
+  artifacts(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        slug
+        name
+        description
+        body
+        cover {
+          data {
+            id
+            attributes {
+              url
+            }
+          }
+        }
+        category {
+          data {
+            id
+            attributes {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;

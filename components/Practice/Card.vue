@@ -4,7 +4,7 @@ const { entity, peopleSlug } = defineProps<{
     id: string;
     attributes: PracticeAttributes;
   };
-  peopleSlug: string;
+  type: "practice" | "artifact";
 }>();
 </script>
 <template>
@@ -14,7 +14,7 @@ const { entity, peopleSlug } = defineProps<{
     }"
   >
     <div class="flex gap-4">
-      <figure class="img-cont">
+      <figure class="img-cont w-64">
         <NuxtImg
           :src="entity.attributes.cover.data.attributes.url"
           class="!h-full rounded-2xl object-cover object-center"
@@ -29,7 +29,7 @@ const { entity, peopleSlug } = defineProps<{
         </p>
         <div class="mt-auto">
           <UButton
-            :to="`/${peopleSlug}/${entity.attributes.slug}`"
+            :to="`/${type}/${entity.attributes.slug}`"
             variant="soft"
             size="xl"
           >

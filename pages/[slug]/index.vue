@@ -56,10 +56,7 @@ console.log(people);
                 :key="practice.id"
                 class="flex flex-col gap-4"
               >
-                <PracticeCard
-                  :entity="practice"
-                  :peopleSlug="people.attributes.slug"
-                />
+                <PracticeCard :entity="practice" type="practice" />
               </li>
             </ul>
             <div v-else>
@@ -81,10 +78,7 @@ console.log(people);
                 :key="artifact.id"
                 class="flex flex-col gap-4"
               >
-                <PracticeCard
-                  :entity="artifact"
-                  :peopleSlug="people.attributes.slug"
-                />
+                <PracticeCard :entity="artifact" type="artifact" />
               </li>
             </ul>
             <div v-else>
