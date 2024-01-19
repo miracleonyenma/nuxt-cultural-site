@@ -126,3 +126,11 @@ interface PracticesResponse {
     };
   };
 }
+
+interface ArtifactsResponse {
+  data: {
+    artifacts: {
+      data: Practice[];
+    };
+  };
+}

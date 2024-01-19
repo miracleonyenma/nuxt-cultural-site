@@ -96,7 +96,7 @@ export const usePeople = () => {
     slug,
   }: {
     slug: string;
-  }) => Promise<PracticesResponse> = async ({ slug }) => {
+  }) => Promise<ArtifactsResponse> = async ({ slug }) => {
     const artifactQuery = {
       query: artifactsQueryLiteral,
       variables: {

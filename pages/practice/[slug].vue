@@ -23,5 +23,5 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <SiteEntityContent :entity="practices" type="practice" />
+  <SiteEntityContent :entity="practices?.practices?.data[0]" type="practice" />
 </template>

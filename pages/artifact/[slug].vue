@@ -8,7 +8,7 @@ const { data, error } = await useAsyncData("artifacts", () =>
   }),
 );
 
-const artifacts = ref(data.value?.data.artifactss.data[0]);
+const artifacts = ref(data.value?.data);
 
 if (error.value) {
   console.error(error.value);
@@ -23,5 +23,5 @@ onMounted(async () => {
 });
 </script>
 <template>
-  {{ artifacts }}
+  <SiteEntityContent :entity="artifacts?.artifacts?.data[0]" type="artifact" />
 </template>
