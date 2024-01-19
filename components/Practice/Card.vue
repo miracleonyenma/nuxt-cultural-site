@@ -14,10 +14,10 @@ const { entity, peopleSlug } = defineProps<{
     }"
   >
     <div class="flex gap-4">
-      <figure class="img-cont w-52 h-52">
+      <figure class="img-cont !w-52 h-52">
         <NuxtImg
           :src="entity.attributes.cover.data.attributes.url"
-          class="!h-full rounded-2xl object-cover object-center"
+          class="!h-full !w-full rounded-2xl object-cover object-center"
         />
       </figure>
       <div class="flex flex-col gap-2">
