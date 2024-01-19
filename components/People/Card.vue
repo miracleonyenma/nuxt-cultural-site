@@ -28,7 +28,11 @@ const { people } = defineProps<{
             {{ people.attributes.name }}
           </h3>
           <p class="text-xl">{{ people.attributes.description }}</p>
-          <UButton :to="people.attributes.slug" variant="soft" size="xl">
+          <UButton
+            :to="'people/' + people.attributes.slug"
+            variant="soft"
+            size="xl"
+          >
             Explore
             <template #trailing>
               <UIcon name="i-heroicons-arrow-right" />

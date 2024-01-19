@@ -24,19 +24,22 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <UForm
-    :schema="schema"
-    :state="state"
-    class="flex flex-row gap-2"
-    @submit="onSubmit"
-  >
-    <UFormGroup class="w-full" size="lg">
-      <UInput
-        class="w-full"
-        placeholder="Search"
-        icon="i-heroicons-magnifying-glass"
-      />
-    </UFormGroup>
-    <UButton type="submit"> Go </UButton>
-  </UForm>
+  <div>
+
+    <!-- <UForm
+      :schema="schema"
+      :state="state"
+      class="flex flex-row gap-2"
+      @submit="onSubmit"
+    >
+      <UFormGroup class="w-full" size="lg">
+        <UInput
+          class="w-full"
+          placeholder="Search"
+          icon="i-heroicons-magnifying-glass"
+        />
+      </UFormGroup>
+      <UButton type="submit"> Go </UButton>
+    </UForm> -->
+  </div>
 </template>
