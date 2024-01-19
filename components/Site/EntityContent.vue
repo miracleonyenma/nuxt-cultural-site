@@ -10,14 +10,14 @@ defineProps<{
   <main v-if="entity">
     <section class="site-section">
       <div class="wrapper">
-        <header class="site-section__header flex flex-col gap-2">
+        <header class="site-section__header flex flex-col gap-4">
           <figure class="img-cont h-full w-full">
             <NuxtImg
               :src="entity?.attributes.cover.data.attributes.url"
               class="!h-full rounded-2xl object-cover object-center"
             />
           </figure>
-          <div class="flex flex-col">
+          <div class="flex flex-col gap-2">
             <h2 class="text-4xl font-bold">{{ entity?.attributes.name }}</h2>
             <p class="text-xl">{{ entity?.attributes.description }}</p>
           </div>
@@ -25,7 +25,9 @@ defineProps<{
       </div>
     </section>
     <section class="site-section">
-      <div class="wrapper">
+      <div
+        class="wrapper prose:text-slate-800 prose:dark:!text-slate-100 prose lg:prose-xl"
+      >
         <StrapiBlocks
           v-if="entity?.attributes.body"
           :content="entity?.attributes.body"
